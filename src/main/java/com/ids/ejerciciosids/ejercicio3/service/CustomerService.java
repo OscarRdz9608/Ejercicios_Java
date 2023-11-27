@@ -21,7 +21,7 @@ import java.util.Optional;
  * @param "<Cliente>"
  */
 public class CustomerService  implements IContratoDAO<Cliente> {
-    Conexion cnx = new Conexion();
+
     List<Cliente> customers = new ArrayList<>();
      private String tipoPersona;
 
@@ -43,7 +43,7 @@ public class CustomerService  implements IContratoDAO<Cliente> {
                  preparedStatement.setString(2, cliente.getApPaterno());
                  preparedStatement.setString(3, cliente.getApMaterno());
                  preparedStatement.setString(4, cliente.getTipoPersona().toString());
-                 preparedStatement.setDouble(5, cliente.getSaldoCliente());
+                 preparedStatement.setDouble(5, cliente.getImporte());
                  preparedStatement.executeUpdate();
                  return Optional.of(cliente);
              } catch (SQLException e) {
@@ -192,7 +192,7 @@ public class CustomerService  implements IContratoDAO<Cliente> {
             preparedStatement.setString(2, client.getApMaterno());
             preparedStatement.setString(3, client.getApMaterno());
             preparedStatement.setString(4, client.getTipoPersona().toString());
-            preparedStatement.setDouble(5, client.getSaldoCliente());
+            preparedStatement.setDouble(5, client.getImporte());
             preparedStatement.setInt(6, client.getCveCliente());
             preparedStatement.executeUpdate();
             return Optional.of(client);

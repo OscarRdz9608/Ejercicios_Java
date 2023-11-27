@@ -1,7 +1,6 @@
 package com.ids.ejerciciosids.ejercicio3.service;
 
 import com.ids.ejerciciosids.ejercicio3.bd.Conexion;
-import com.ids.ejerciciosids.ejercicio3.entity.Cliente;
 import com.ids.ejerciciosids.ejercicio3.entity.DatosGenerales;
 import com.ids.ejerciciosids.ejercicio3.entity.Proveedor;
 import com.ids.ejerciciosids.ejercicio3.repository.IContratoDAO;
@@ -44,7 +43,7 @@ public class SupplierService implements IContratoDAO<Proveedor> {
                 preparedStatement.setString(2, proveedor.getApPaterno());
                 preparedStatement.setString(3, proveedor.getApMaterno());
                 preparedStatement.setString(4, proveedor.getTipoPersona().toString());
-                preparedStatement.setDouble(5, proveedor.getSaldoCliente());
+                preparedStatement.setDouble(5, proveedor.getImporte());
                 preparedStatement.executeUpdate();
                 return Optional.of(proveedor);
             } catch (SQLException e) {
@@ -194,7 +193,7 @@ public class SupplierService implements IContratoDAO<Proveedor> {
             preparedStatement.setString(2, proveedor.getApMaterno());
             preparedStatement.setString(3, proveedor.getApMaterno());
             preparedStatement.setString(4, proveedor.getTipoPersona().toString());
-            preparedStatement.setDouble(5, proveedor.getSaldoCliente());
+            preparedStatement.setDouble(5, proveedor.getImporte());
             preparedStatement.setInt(6, proveedor.getCveProveedor());
             preparedStatement.executeUpdate();
             return Optional.of(proveedor);
@@ -202,7 +201,5 @@ public class SupplierService implements IContratoDAO<Proveedor> {
             return Optional.empty();
         }
     }
-
-
 }
 

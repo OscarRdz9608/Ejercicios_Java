@@ -25,9 +25,9 @@ public class Main {
 
         System.out.println("============= LISTAR CLIENTES================");
         CustomerService customerService = new CustomerService();
-       System.out.println(customerService.findAll());
+        System.out.println(customerService.findAll());
         System.out.println("=============GUARDAR CLIENTE================");
-        customerService.save(new Cliente("David", "Rodriguez", "Marin", DatosGenerales.tipoPersona.FISICA, 2050.00));
+        customerService.save(new Cliente("Sauuuuul", "Rodriguez", "Marin", DatosGenerales.tipoPersona.FISICA));
         System.out.println(customerService.findAll());
         System.out.println("=============CLIENTE BY ID============");
         System.out.println(customerService.findById(1));
@@ -38,11 +38,11 @@ public class Main {
         customerService.update(new Cliente(2, "Pepe", "Rodriguez", "Marin", DatosGenerales.tipoPersona.FISICA, 5000.00));
         System.out.println(customerService.findById(2));
 
-        System.out.println("=============LISTAR BPROVEEDORES================");
+        System.out.println("=============LISTAR PROVEEDORES================");
         SupplierService supplierService = new SupplierService();
         System.out.println(supplierService.findAll());
         System.out.println("=============GUARDAR PROVEEDOR==============");
-        supplierService.save(new Proveedor("Patito", null, null, DatosGenerales.tipoPersona.FISICA, 20.1 ));
+        supplierService.save(new Proveedor("Patito", null, null, DatosGenerales.tipoPersona.FISICA));
         System.out.println(supplierService.findAll());
         System.out.println("=============PROVEEDOR BY ID================");
         System.out.println(supplierService.findById(1));

@@ -23,10 +23,10 @@ public class Cliente extends DatosGenerales {
      *@param apellidoMaterno type:str Apellido materno del cliente
      * @param tipoPersona type:enum Tipo de persona
      */
-    public Cliente(int cveCliente, String nombre, String apellidoPaterno, String apellidoMaterno, tipoPersona tipoPersona, Double saldoCliente) {
-        super(nombre, apellidoPaterno, apellidoMaterno, tipoPersona, saldoCliente);
+    public Cliente(int cveCliente, String nombre, String apellidoPaterno, String apellidoMaterno, tipoPersona tipoPersona, Double saldo) {
+        super(nombre, apellidoPaterno, apellidoMaterno, tipoPersona);
         this.cveCliente = cveCliente;
-        this.setSaldoCliente(saldoCliente);
+        this.setImporte(saldo);
     }
 
     /**
@@ -38,9 +38,9 @@ public class Cliente extends DatosGenerales {
      *@param apellidoMaterno type:str Apellido materno del cliente
      * @param tipoPersona type:enum Tipo de persona
      */
-    public Cliente( String nombre, String apellidoPaterno, String apellidoMaterno, tipoPersona tipoPersona, Double saldoCliente) {
-        super(nombre, apellidoPaterno, apellidoMaterno, tipoPersona, saldoCliente);
-        this.setSaldoCliente(saldoCliente);
+    public Cliente( String nombre, String apellidoPaterno, String apellidoMaterno, tipoPersona tipoPersona) {
+        super(nombre, apellidoPaterno, apellidoMaterno, tipoPersona);
+        this.setImporte(saldo());
     }
 
     /**
@@ -83,6 +83,11 @@ public class Cliente extends DatosGenerales {
      */
     @Override
     public String toString() {
-        return "CveCliente: " + cveCliente + "\nNombre: " + getNombre() + "\nApellido Paterno: " + getApPaterno() + "\nApellido Materno: " + getApMaterno() + ", Tipo Persona: " + getTipoPersona() + "\nSaldo: "+ getSaldoCliente();
+        return "CveCliente: " + cveCliente +
+                "\nNombre: " + getNombre() +
+                "\nApellido Paterno: " + getApPaterno() +
+                "\nApellido Materno: " + getApMaterno() +
+                "\nTipo Persona: " + getTipoPersona()  +
+                "\nSaldo: "+ getImporte();
     }
 }

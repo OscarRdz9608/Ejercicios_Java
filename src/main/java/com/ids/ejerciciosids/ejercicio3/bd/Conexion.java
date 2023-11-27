@@ -23,7 +23,7 @@ public class Conexion {
     public Connection getConnection(){
         Connection connection = null;
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/store", "root", "Comercial*1129");
+            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/store", "root", "");
 /*            if (connection != null){
                 System.out.println("Conectado!");
             }*/

@@ -25,8 +25,9 @@ public class Proveedor extends DatosGenerales {
      * @param tipoPersona type:enum Tipo de persona
      */
     public Proveedor( int cveProveedor, String nombre, String apellidoPaterno, String apellidoMaterno, tipoPersona tipoPersona, double saldo) {
-        super(nombre, apellidoPaterno, apellidoMaterno, tipoPersona, saldo);
+        super(nombre, apellidoPaterno, apellidoMaterno, tipoPersona);
         this.cveProveedor = cveProveedor;
+        this.setImporte(saldo);
     }
 
     /**
@@ -38,9 +39,14 @@ public class Proveedor extends DatosGenerales {
      *@param apellidoMaterno type:str Apellido materno del proveedor
      * @param tipoPersona type:enum Tipo de persona
      */
-    public Proveedor(String nombre, String apellidoPaterno, String apellidoMaterno, tipoPersona tipoPersona, double saldo) {
-        super(nombre, apellidoPaterno, apellidoMaterno, tipoPersona, saldo);
-    }
+   public Proveedor(String nombre, String apellidoPaterno, String apellidoMaterno, tipoPersona tipoPersona) {
+       super(nombre,
+               apellidoPaterno,
+               apellidoMaterno,
+               tipoPersona);
+       this.setImporte(saldo());
+   }
+
 
     /**
      * Metodo para obtener el identificador del proveedor
@@ -82,6 +88,9 @@ public class Proveedor extends DatosGenerales {
      */
     @Override
     public String toString() {
-        return "CveProveedor: " + cveProveedor + "\nNombre: " + getNombre() + "\nApellido Paterno: " + getApPaterno() + "\nApellido Materno: " + getApMaterno() + ", Tipo Persona: " + getTipoPersona() + "\nSaldo: "+ getSaldoCliente();
+        return "CveProveedor: " + cveProveedor + "\nNombre: " + getNombre() + "\nApellido Paterno: " + getApPaterno() + "\nApellido Materno: " + getApMaterno() + ", Tipo Persona: " + getTipoPersona() + "\nSaldo: "+ getImporte();
     }
+
+
+
 }

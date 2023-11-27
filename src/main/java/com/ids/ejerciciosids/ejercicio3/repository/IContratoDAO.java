@@ -22,5 +22,4 @@ public interface IContratoDAO<Object> {
     void deleteById(Integer id) throws SQLException;
 
     Optional<Object> update(Object object) throws SQLException;
-
 }

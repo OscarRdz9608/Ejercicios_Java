@@ -7,12 +7,13 @@ package com.ids.ejerciciosids.ejercicio3.entity;
  * @see class Abstracta que representa los datos generales de un cliente
  */
 public abstract class DatosGenerales {
+
     public enum tipoPersona{ FISICA,MORAL}
     private String nombre;
     private String apPaterno;
     private String apMaterno;
     private tipoPersona tipoPersona;
-    private double saldoCliente;
+    private double saldo;
 
     /**
      * Constructor de la clase principal
@@ -23,12 +24,12 @@ public abstract class DatosGenerales {
      *@param apMaterno type String - apellido materno del cliente
      *@param tipoPersona type String - tipo de persona
      */
-    public DatosGenerales(String nombre, String apPaterno, String apMaterno, tipoPersona tipoPersona, Double saldo) {
+    public DatosGenerales(String nombre, String apPaterno, String apMaterno, tipoPersona tipoPersona) {
         this.nombre = nombre;
         this.apPaterno = apPaterno;
         this.apMaterno = apMaterno;
         this.tipoPersona = tipoPersona;
-        this.saldoCliente = saldo;
+
     }
 
     /**
@@ -117,18 +118,18 @@ public abstract class DatosGenerales {
      * @see "Get para el saldo del cliente"
      * @return type: String apellido materno
      */
-    public  double getSaldoCliente() {
-        return saldoCliente;
+    public  double getImporte() {
+        return saldo;
     }
 
     /**
      * Metodo para establecer el saldo del cliente
      * @author oscar.d.rodriguez
      * @see "Set para el saldo del cliente"
-     * @param saldoCliente type:double saldo
+     * @param saldo type:double saldo
      */
-    public void setSaldoCliente(double saldoCliente) {
-        this.saldoCliente = saldoCliente;
+    public void setImporte(double saldo) {
+        this.saldo = saldo;
     }
 
     /**
